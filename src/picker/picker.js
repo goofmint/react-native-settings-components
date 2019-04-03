@@ -59,7 +59,7 @@ class SettingsPicker extends Component {
     value: PropTypes.any,
     valueFormat: PropTypes.func,
     valuePlaceholder: PropTypes.string,
-    options: PropTypes.array.isRequired,
+    options: PropTypes.array,
     dialogDescription: PropTypes.string,
     onValueChange: PropTypes.func.isRequired,
     disabled: PropTypes.bool,
