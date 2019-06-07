@@ -17,10 +17,10 @@ const style = StyleSheet.create({
     alignItems: 'center',
   },
   indicator: {
-    height: 12,
-    width: 12,
-    borderColor: 'red',
-    borderWidth: 2,
+    height: 20,
+    width: 20,
+    borderColor: '#333',
+    borderWidth: 1,
     borderRadius: 6,
     padding: 2,
     justifyContent: 'center',
@@ -65,7 +65,7 @@ class PickerModalItem extends Component {
         >
           <View style={style.itemWrapper}>
             <View style={style.indicatorWrapper}>
-              <View style={[style.indicator, { backgroundColor: selected ? 'red' : null }]} />
+              <View style={[style.indicator, { backgroundColor: selected ? '#333' : null }]} />
             </View>
             <View style={style.labelWrapper}>
               <Text style={style.label}>
