@@ -49,7 +49,7 @@ const style = StyleSheet.create({
     color: 'white',
   },
   headerCloseBtnWrapper: {
-    marginRight: 16,
+    padding: 20,
     minHeight: 40,
     minWidth: 40,
     alignItems: 'center',
@@ -131,15 +131,15 @@ class PickerModal extends Component {
       isFirst: index === 0,
       isLast: index === options.length - 1,
     }) : (
-      <PickerModalItem
-        key={`picker-item:${toString(index)}`}
-        onSelect={this.onSelectPickerItem(item.value)}
-        selected={pickerValue.indexOf(item.value) !== -1}
-        label={item.label}
-        value={item.value}
-        isLast={index === options.length - 1}
-      />
-    );
+        <PickerModalItem
+          key={`picker-item:${toString(index)}`}
+          onSelect={this.onSelectPickerItem(item.value)}
+          selected={pickerValue.indexOf(item.value) !== -1}
+          label={item.label}
+          value={item.value}
+          isLast={index === options.length - 1}
+        />
+      );
   };
 
   render() {
@@ -174,13 +174,6 @@ class PickerModal extends Component {
                     {dialogDescription}
                   </Text>) : null}
               </View>
-              <TouchableOpacity
-                style={[style.headerCloseBtnWrapper, get(modalStyle, 'header.closeBtnWrapper')]}
-                onPress={closeModal}
-                activeOpacity={0.6}
-              >
-                {renderCloseBtn()}
-              </TouchableOpacity>
             </View>
             <View style={[style.listWrapper, get(modalStyle, 'list.wrapper')]}>
               <ScrollView style={[style.listScrollView, get(modalStyle, 'list.scrollView')]}>
@@ -191,6 +184,13 @@ class PickerModal extends Component {
                   {map(options, (item, index) => this.renderPickerItem({ item, index }))}
                 </View>
               </ScrollView>
+              <TouchableOpacity
+                style={[style.headerCloseBtnWrapper, get(modalStyle, 'header.closeBtnWrapper')]}
+                onPress={closeModal}
+                activeOpacity={1}
+              >
+                {renderCloseBtn()}
+              </TouchableOpacity>
             </View>
           </View>
         </View>
