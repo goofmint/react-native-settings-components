@@ -12,7 +12,7 @@ import PickerModalItem from './picker.modal.item';
 
 const style = StyleSheet.create({
   outerWrapper: {
-    flex: 1,
+    flex: 1
   },
   cancelTouchable: {
     flex: 1,
@@ -24,7 +24,7 @@ const style = StyleSheet.create({
     width: '100%',
     height: 300,
     shadowRadius: 12,
-    shadowColor: '#101010',
+    shadowColor: '#cccccc',
     shadowOffset: {
       width: 0,
       height: 8,
@@ -38,8 +38,10 @@ const style = StyleSheet.create({
     flexDirection: 'row',
   },
   headerTitleWrapper: {
+    borderTopRightRadius: 50,
+    borderTopLeftRadius: 50,
     flex: 1,
-    paddingTop: 12,
+    paddingTop: 20,
     paddingHorizontal: 16,
     paddingBottom: 12,
   },
@@ -49,11 +51,14 @@ const style = StyleSheet.create({
     color: 'white',
   },
   headerCloseBtnWrapper: {
-    padding: 20,
     minHeight: 40,
+    backgroundColor: '#fff',
+    paddingHorizontal: 20,
+    paddingBottom: 20,
+    paddingTop: 20,
     minWidth: 40,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: 'stretch',
+    justifyContent: 'flex-end',
   },
   headerCloseBtnText: {
     paddingHorizontal: 8,
@@ -131,15 +136,15 @@ class PickerModal extends Component {
       isFirst: index === 0,
       isLast: index === options.length - 1,
     }) : (
-        <PickerModalItem
-          key={`picker-item:${toString(index)}`}
-          onSelect={this.onSelectPickerItem(item.value)}
-          selected={pickerValue.indexOf(item.value) !== -1}
-          label={item.label}
-          value={item.value}
-          isLast={index === options.length - 1}
-        />
-      );
+      <PickerModalItem
+        key={`picker-item:${toString(index)}`}
+        onSelect={this.onSelectPickerItem(item.value)}
+        selected={pickerValue.indexOf(item.value) !== -1}
+        label={item.label}
+        value={item.value}
+        isLast={index === options.length - 1}
+      />
+    );
   };
 
   render() {
@@ -156,12 +161,8 @@ class PickerModal extends Component {
         transparent
       >
         <View style={[style.outerWrapper]}>
-          <TouchableWithoutFeedback
-            onPress={closeModal}
-          >
-            <View
-              style={style.cancelTouchable}
-            />
+          <TouchableWithoutFeedback onPress={closeModal}>
+            <View style={style.cancelTouchable}  />
           </TouchableWithoutFeedback>
           <View style={[style.innerWrapper, get(modalStyle, 'innerWrapper')]}>
             <View style={[style.headerWrapper, get(modalStyle, 'header.wrapper')]}>
@@ -184,13 +185,13 @@ class PickerModal extends Component {
                   {map(options, (item, index) => this.renderPickerItem({ item, index }))}
                 </View>
               </ScrollView>
-              <TouchableOpacity
-                style={[style.headerCloseBtnWrapper, get(modalStyle, 'header.closeBtnWrapper')]}
-                onPress={closeModal}
-                activeOpacity={1}
-              >
+
+              <View style={[style.headerCloseBtnWrapper, get(modalStyle, 'header.closeBtnWrapper')]}>
+              <TouchableOpacity  onPress={closeModal} activeOpacity={0.6}>
                 {renderCloseBtn()}
               </TouchableOpacity>
+              </View>
+
             </View>
           </View>
         </View>
