@@ -32,7 +32,8 @@ const style = StyleSheet.create({
     justifyContent: 'center',
   },
   label: {
-    fontSize: 15,
+    fontSize: 14,
+    color: '#333',
     textTransform: 'capitalize'
   },
   separator: {
