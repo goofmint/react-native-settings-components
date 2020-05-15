@@ -160,7 +160,7 @@ class SettingsPicker extends Component {
 
   generateValStr = () => {
     const {
-      multi, valueFormat, value, valuePlaceholder,
+      multi, valueFormat, value, options, valuePlaceholder,
     } = this.props;
     if (valueFormat) {
       return valueFormat(value);
@@ -170,7 +170,9 @@ class SettingsPicker extends Component {
         return trim(join(value, ', '));
       }
     } else if (value) {
-      return value.toString();
+      const getLabel = options.map((item) => 
+       item['value'] === value ? item['label']: '')
+      return getLabel;
     }
     return valuePlaceholder;
   };
