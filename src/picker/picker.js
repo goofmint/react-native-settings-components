@@ -1,12 +1,10 @@
-import React, { Component } from 'react';
-import {
-  View, Text, StyleSheet, TouchableOpacity,
-} from 'react-native';
-import PropTypes from 'prop-types';
 import cloneDeep from 'lodash/cloneDeep';
 import isArray from 'lodash/isArray';
-import trim from 'lodash/trim';
 import join from 'lodash/join';
+import trim from 'lodash/trim';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import PickerModal from './picker.modal';
 
 const style = StyleSheet.create({
@@ -25,7 +23,8 @@ const style = StyleSheet.create({
   },
   defaultValueStyle: {
     color: 'rgb(160,160,160)',
-    fontSize: 14,
+    fontSize: 13,
+    textTransform: 'capitalize',
     flex: 0,
     paddingLeft: 8,
     paddingRight: 16,

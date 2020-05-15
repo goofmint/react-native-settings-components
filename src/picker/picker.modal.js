@@ -12,17 +12,25 @@ import PickerModalItem from './picker.modal.item';
 
 const style = StyleSheet.create({
   outerWrapper: {
+    borderTopRightRadius: 5,
+    borderTopLeftRadius: 5,
+    borderBottomRightRadius: 5,
+    borderBottomLeftRadius: 5,
     flex: 1
   },
   cancelTouchable: {
     flex: 1,
   },
   innerWrapper: {
+    borderTopRightRadius: 5,
+    borderTopLeftRadius: 5,
+    borderBottomRightRadius: 5,
+    borderBottomLeftRadius: 5,
     flex: 0,
+    marginBottom: 40,
     justifyContent: 'flex-end',
-    paddingTop: 20,
-    width: '100%',
-    height: 300,
+    width:'90%',
+    alignSelf: 'center',
     shadowRadius: 12,
     shadowColor: '#cccccc',
     shadowOffset: {
@@ -38,8 +46,6 @@ const style = StyleSheet.create({
     flexDirection: 'row',
   },
   headerTitleWrapper: {
-    borderTopRightRadius: 50,
-    borderTopLeftRadius: 50,
     flex: 1,
     paddingTop: 20,
     paddingHorizontal: 16,
@@ -51,18 +57,10 @@ const style = StyleSheet.create({
     color: 'white',
   },
   headerCloseBtnWrapper: {
-    minHeight: 40,
-    backgroundColor: '#fff',
-    paddingHorizontal: 20,
-    paddingBottom: 20,
-    paddingTop: 20,
-    minWidth: 40,
     alignItems: 'stretch',
-    justifyContent: 'flex-end',
+    justifyContent: 'flex-end'
   },
   headerCloseBtnText: {
-    paddingHorizontal: 8,
-    paddingVertical: 4,
     color: 'white',
     fontSize: 16,
   },
@@ -185,14 +183,12 @@ class PickerModal extends Component {
                   {map(options, (item, index) => this.renderPickerItem({ item, index }))}
                 </View>
               </ScrollView>
-
+            </View>
               <View style={[style.headerCloseBtnWrapper, get(modalStyle, 'header.closeBtnWrapper')]}>
               <TouchableOpacity  onPress={closeModal} activeOpacity={0.6}>
                 {renderCloseBtn()}
               </TouchableOpacity>
               </View>
-
-            </View>
           </View>
         </View>
       </Modal>

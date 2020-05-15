@@ -33,6 +33,7 @@ const style = StyleSheet.create({
   },
   label: {
     fontSize: 15,
+    textTransform: 'capitalize'
   },
   separator: {
     width: '100%',
