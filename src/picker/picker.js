@@ -170,9 +170,8 @@ class SettingsPicker extends Component {
         return trim(join(value, ', '));
       }
     } else if (value) {
-      const getLabel = options.map((item) => 
-       item['value'] === value ? item['label']: '')
-      return getLabel;
+      const label = options.filter((i) => i.value === value).pop()
+      return label['label']
     }
     return valuePlaceholder;
   };
