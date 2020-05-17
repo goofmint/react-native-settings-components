@@ -115,6 +115,7 @@ class PickerModal extends Component {
   onSelectPickerItem = value => () => {
     const { onSelectItem } = this.props;
     onSelectItem(value);
+    props.autoSelect && closeModal()
   };
 
   calculateScrollViewContentHeight = (e) => {
@@ -148,7 +149,7 @@ class PickerModal extends Component {
   render() {
     const {
       closeModal, pickerOpen, dialogDescription, title, modalStyle,
-      options, renderCloseBtn,
+      options, renderCloseBtn, autoSelect,
     } = this.props;
     const { scrollViewContentHeight } = this.state;
     return (
@@ -185,9 +186,9 @@ class PickerModal extends Component {
               </ScrollView>
             </View>
               <View style={[style.headerCloseBtnWrapper, get(modalStyle, 'header.closeBtnWrapper')]}>
-              <TouchableOpacity  onPress={closeModal} activeOpacity={0.6}>
+              {!autoSelect && <TouchableOpacity  onPress={closeModal} activeOpacity={0.6}>
                 {renderCloseBtn()}
-              </TouchableOpacity>
+              </TouchableOpacity>}
               </View>
           </View>
         </View>

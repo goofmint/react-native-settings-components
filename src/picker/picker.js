@@ -178,7 +178,7 @@ class SettingsPicker extends Component {
 
   render() {
     const {
-      disabled, dialogDescription,
+      disabled, dialogDescription, autoSelect,
       containerProps, containerStyle, title, titleProps, titleStyle,
       valueProps, valueStyle, disabledOverlayStyle, modalStyle,
       options,
@@ -198,6 +198,7 @@ class SettingsPicker extends Component {
             <PickerModal
               closeModal={this.closeModal}
               pickerOpen={pickerOpen}
+              autoSelect={autoSelect}
               pickerValue={pickerValue}
               title={title}
               options={options}
