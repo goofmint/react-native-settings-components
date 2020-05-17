@@ -116,7 +116,7 @@ class PickerModal extends Component {
     const { onSelectItem, closeModal, autoSelect, multi } = this.props;
     onSelectItem(value);
     if(!multi && autoSelect) {
-      return closeModal
+       closeModal()
     }
   };
 
