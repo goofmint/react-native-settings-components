@@ -113,9 +113,11 @@ class PickerModal extends Component {
   };
 
   onSelectPickerItem = value => () => {
-    const { onSelectItem, autoSelect, multi } = this.props;
+    const { onSelectItem, closeModal, autoSelect, multi } = this.props;
     onSelectItem(value);
-    !multi && autoSelect && closeModal()
+    if(!multi && autoSelect) {
+      return closeModal
+    }
   };
 
   calculateScrollViewContentHeight = (e) => {
