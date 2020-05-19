@@ -12,6 +12,7 @@ import PickerModalItem from './picker.modal.item';
 
 const style = StyleSheet.create({
   outerWrapper: {
+    backgroundColor: '#33333340',
     borderTopRightRadius: 5,
     borderTopLeftRadius: 5,
     borderBottomRightRadius: 5,
@@ -157,7 +158,7 @@ class PickerModal extends Component {
     return (
       <Modal
         visible={pickerOpen}
-        animationType="slide"
+        animationType="fade"
         onRequestClose={closeModal}
         transparent
       >
