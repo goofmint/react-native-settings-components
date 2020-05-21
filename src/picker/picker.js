@@ -122,7 +122,7 @@ class SettingsPicker extends Component {
     });
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     this.setState({
       pickerValue: nextProps.multi && isArray(nextProps.value)
         ? nextProps.value : [nextProps.value],
