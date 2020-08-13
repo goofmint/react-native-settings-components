@@ -12,11 +12,7 @@ import PickerModalItem from './picker.modal.item';
 
 const style = StyleSheet.create({
   outerWrapper: {
-    backgroundColor: '#33333340',
-    borderTopRightRadius: 5,
-    borderTopLeftRadius: 5,
-    borderBottomRightRadius: 5,
-    borderBottomLeftRadius: 5,
+    backgroundColor: '#33333320',
     flex: 1
   },
   cancelTouchable: {
@@ -28,9 +24,9 @@ const style = StyleSheet.create({
     borderBottomRightRadius: 5,
     borderBottomLeftRadius: 5,
     flex: 0,
-    marginBottom: 40,
+    paddingBottom: 40,
     justifyContent: 'flex-end',
-    width:'90%',
+    width:'95%',
     alignSelf: 'center',
     shadowRadius: 12,
     shadowColor: '#cccccc',
@@ -158,7 +154,7 @@ class PickerModal extends Component {
     return (
       <Modal
         visible={pickerOpen}
-        animationType="fade"
+        animationType="slider"
         onRequestClose={closeModal}
         transparent
       >
