@@ -65,7 +65,7 @@
   ],
   "license": "MIT",
   "main": "src/index.js",
-  "name": "react-native-settings-components",
+  "name": "moongift/react-native-settings-components",
   "peerDependencies": {
     "prop-types": ">=15.5.0",
     "react": ">=16.0.0",
